@@ -1,4 +1,5 @@
 using Application.UseCases.AddProduct;
+using Application.UseCases.GetProduct;
 using Domain.Contracts.Repositories;
 using Domain.Contracts.UseCases;
 using FluentValidation;
@@ -16,10 +17,10 @@ namespace WebApi
             // Add services to the container.
             builder.Services.AddScoped<IValidator<AddProductInput>, AddProductInputValidator>();
             builder.Services.AddScoped<IAddProductUseCase, AddProductUseCase>();
-            builder.Services.AddSingleton<IAddProductRepository, AddProductRepository>();
+            builder.Services.AddScoped<IGetProductUseCase, GetProductUseCase>();
+            builder.Services.AddSingleton<IProductRepository, ProductRepository>();
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

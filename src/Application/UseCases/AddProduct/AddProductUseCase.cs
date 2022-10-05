@@ -6,9 +6,9 @@ namespace Application.UseCases.AddProduct
 {
     public class AddProductUseCase : IAddProductUseCase
     {
-        private readonly IAddProductRepository _addProductRepository;
+        private readonly IProductRepository _addProductRepository;
 
-        public AddProductUseCase(IAddProductRepository addProductRepository)
+        public AddProductUseCase(IProductRepository addProductRepository)
         {
             _addProductRepository = addProductRepository;
         }

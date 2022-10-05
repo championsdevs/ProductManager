@@ -2,8 +2,9 @@
 
 namespace Domain.Contracts.Repositories
 {
-    public interface IAddProductRepository
+    public interface IProductRepository
     {
         void AddProduct(Product product);
+        Product GetProduct(string code);
     }
 }
